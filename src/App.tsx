@@ -1,10 +1,10 @@
-import ContextOrders from "./contexts/ContextOrders";
-import Orders from "./pages/Orders";
+import ContextProfileProvider from "./contexts/contextProfile";
+import PageProfile from "./pages/Profile";
 
 function App() {
   return (
     <>
-      <ContextOrders><Orders/></ContextOrders>
+      <ContextProfileProvider><PageProfile/></ContextProfileProvider> 
     </>
   );
 }
