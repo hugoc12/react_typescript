@@ -1,11 +1,13 @@
 import { createContext, ReactNode, useReducer } from "react";
 
+type colorDiv = {
+    classDiv1:'containerLabel1 colorOption1Container1'|'containerLabel1 colorOption2Container1'|'containerLabel1 colorOption3Container1',
+    classDiv2:'containerLabel2 colorOption1Container2'|'containerLabel2 colorOption2Container2'|'containerLabel2 colorOption3Container2',
+}
+
 interface statesTypes{ // 1º INTERFACE PARA DEFINIR SUAS STATES
     name:string,
-    color:{
-        classDiv1:'containerLabel1 colorOption1Container1'|'containerLabel1 colorOption2Container1'|'containerLabel1 colorOption3Container1',
-        classDiv2:'containerLabel2 colorOption1Container2'|'containerLabel2 colorOption2Container2'|'containerLabel2 colorOption3Container2',
-    },
+    color:colorDiv,
 }
 
 interface actionSetName{
@@ -15,19 +17,13 @@ interface actionSetName{
 
 interface actionSetColor{
     type:'setColor',
-    value:{
-        classDiv1:'containerLabel1 colorOption1Container1'|'containerLabel1 colorOption2Container1'|'containerLabel1 colorOption3Container1',
-        classDiv2:'containerLabel2 colorOption1Container2'|'containerLabel2 colorOption2Container2'|'containerLabel2 colorOption3Container2',
-    },
+    value:colorDiv,
 }
 
 interface valuesContext{ // 2º INTERFACE PARA DEFINIR VALORES DE CONTEXTO
     name:string,
     setName:(value:actionSetName)=>void,
-    color:{
-        classDiv1:'containerLabel1 colorOption1Container1'|'containerLabel1 colorOption2Container1'|'containerLabel1 colorOption3Container1',
-        classDiv2:'containerLabel2 colorOption1Container2'|'containerLabel2 colorOption2Container2'|'containerLabel2 colorOption3Container2',
-    },
+    color:colorDiv,
     setColor:(value:actionSetColor)=>void,
 }
 
